@@ -1,0 +1,18 @@
+
+#!/usr/bin/env bash
+
+echo
+node $1 &
+pid=$!
+
+sleep 2
+
+wrk 'http://localhost:3000' \
+  -d 3 \
+  -c 50 \
+  -t 8 \
+  > logs/${1##*/}.log
+
+cat logs/${1##*/}.log | grep 'Requests/sec' | awk '{ print "Requests/sec: " $2 }'
+
+kill $pid

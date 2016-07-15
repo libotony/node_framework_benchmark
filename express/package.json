@@ -1,0 +1,32 @@
+{
+  "name": "node_framework_benchmark",
+  "version": "1.0.0",
+  "description": "node webserver framework benchmark",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/libotony/node_framework_benchmark.git"
+  },
+  "keywords": [
+    "express",
+    "koa",
+    "koa1",
+    "koa2",
+    "benchmark"
+  ],
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express-session": "^1.14.0",
+    "multer": "^1.1.0",
+    "swig": "^1.4.2"
+  },
+  "author": "libotony",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/libotony/node_framework_benchmark/issues"
+  },
+  "homepage": "https://github.com/libotony/node_framework_benchmark#readme"
+}
