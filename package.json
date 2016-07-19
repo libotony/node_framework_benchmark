@@ -26,5 +26,7 @@
   "bugs": {
     "url": "https://github.com/libotony/node_framework_benchmark/issues"
   },
-  "homepage": "https://github.com/libotony/node_framework_benchmark#readme"
+  "homepage": "https://github.com/libotony/node_framework_benchmark#readme",
+  "dependencies": {
+  }
 }

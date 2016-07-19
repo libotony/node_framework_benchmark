@@ -1,13 +1,22 @@
+/* basic framework functions
+ * 1、json and form body parser
+ * 2、render engine
+ * 3、cookie parser(express session included cookie parser)
+ * 4、session(use memory store in benchmark mode,use redis store in production mode)
+ * 5、static file module(only function in development mode,use nginx in production mode)
+ * 6、multipart upload support
+ */
+
 'use strict';
 
-var express = require('express');
-var path = require('path');
-var swig = require('swig');
-var bodyParser = require('body-parser');
-var session = require('express-session');
-var multer = require('multer');
+const express = require('express');
+const path = require('path');
+const swig = require('swig');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const multer = require('multer');
 
-var app = express();
+const app = express();
 
 // hang static files
 app.use('/static', express.static(path.join(__dirname,'../static')));
@@ -38,21 +47,8 @@ app.use(session({
   cookie: { secure: true }
 }));
 
-app.use(function(req, res){
-  (new Promise(function(resolve) {
-    resolve(new Buffer('Hello World'));
-  })).then(function(result){
-    return res.end(result);
-  });
-});
-
-app.use(function (req, res) {
-  return res.status(404).render('base/40x');
-});
-
-app.use(function (error, req, res) {
-  console.error(error);
-  return res.status(500).render('base/50x');
+app.use('/',function(req, res){
+  res.end('Hello World');
 });
 
 app.listen(3000);
